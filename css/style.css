@@ -4,8 +4,8 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -31,7 +31,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 24px;
+  padding: 0 24px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -45,7 +45,7 @@ a:hover {
 
 .nav-link {
   padding: 10px 12px;
-  margin: 0px 8px;
+  margin: 0 8px;
   font-weight: 600;
   font-size: 16px;
   line-height: 28px;
@@ -105,7 +105,7 @@ a:hover {
 }
 
 .container {
-  margin: 0px 113px;
+  margin: 0 113px;
   padding: 80px 0;
 }
 
@@ -129,7 +129,7 @@ a:hover {
   line-height: 32px;
   text-align: center;
   color: #172b4d;
-  padding: 0px 60px;
+  padding: 0 60px;
   max-width: 820px;
 }
 
@@ -137,12 +137,12 @@ a:hover {
   margin-top: 33px;
   display: flex;
   transition: all 0.2s ease-in-out;
-  padding: 0px 5px;
+  padding: 0 5px;
 }
 
 .more-info {
   margin-top: 24px;
-  padding: 49px0px 24px 0;
+  padding: 49px 0 24px 0;
 }
 
 .more-info img {
@@ -181,6 +181,6 @@ a:hover {
 
 @media (max-width: 1020px) {
   .hero-description {
-    padding: 0px 29px;
+    padding: 0 29px;
   }
 }
