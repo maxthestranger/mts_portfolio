@@ -42,7 +42,7 @@ a:hover {
 
 .nav-link {
   padding: 10px 12px;
-  margin: 0px 8px;
+  margin: 0 8px;
   font-weight: 600;
   font-size: 16px;
   line-height: 28px;
@@ -52,10 +52,8 @@ a:hover {
 .mb-menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 48px;
   height: 48px;
-  display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 8px;
