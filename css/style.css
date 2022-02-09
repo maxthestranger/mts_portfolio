@@ -17,6 +17,7 @@ body {
 a {
   text-decoration: none;
   transition: all 0.2s ease-in;
+  color: #172b4d;
 }
 
 a:hover {
@@ -134,10 +135,18 @@ a:hover {
 }
 
 .socials {
+  list-style: none;
   margin-top: 33px;
   display: flex;
   transition: all 0.2s ease-in-out;
+}
+
+.socials li {
   padding: 0 5px;
+}
+
+.socials a {
+  display: block;
 }
 
 .more-info {
