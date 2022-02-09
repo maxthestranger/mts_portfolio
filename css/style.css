@@ -88,7 +88,7 @@ a:hover {
 }
 
 .hero {
-  background-image: url('../img/header-llustration-desktop.svg');
+  background-image: url('../img/header-illsutration-mobile.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -102,7 +102,7 @@ a:hover {
   align-items: center;
   justify-content: flex-start;
   height: 756px;
-  margin: 72px auto 231px;
+  margin: 0 auto 231px;
 }
 
 .container {
@@ -185,6 +185,10 @@ a:hover {
   .hero-title {
     font-size: 48px;
     padding-top: 172px;
+  }
+
+  .hero {
+    background-image: url('../img/header-llustration-desktop.svg');
   }
 }
 
