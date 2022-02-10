@@ -213,7 +213,9 @@ img {
   display: flex;
   justify-content: center;
   list-style: none;
+  flex-wrap: wrap;
   margin: 16px 0 30px;
+  row-gap: 20px;
 }
 
 .lower .tags a {
@@ -232,8 +234,9 @@ img {
 .about {
   background-image: url('../img/about_bg.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: top;
+  width: 100%;
 }
 
 .sec-wrapper {
@@ -382,6 +385,30 @@ img {
   .about {
     background-image: url('../img/about_bg.svg');
     background-position: top;
+  }
+}
+
+@media (max-width: 420px) {
+  .skill-item,
+  .works-item {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .skill-item,
+  .works-item {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 324px) {
+  .skill-item,
+  .works-item {
+    width: 70%;
+    margin: 0 auto;
   }
 }
 
