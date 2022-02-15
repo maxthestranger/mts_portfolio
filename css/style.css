@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 *,
 *::after,
@@ -11,7 +11,7 @@
 body {
   color: #172b4d;
   background: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 a {
@@ -104,7 +104,7 @@ button {
 }
 
 .hero {
-  background-image: url('../img/header-illsutration-mobile.svg');
+  background-image: url("../img/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -237,7 +237,7 @@ button {
 
 /* about section */
 .about {
-  background-image: url('../img/about_bg.svg');
+  background-image: url("../img/about_bg.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
@@ -354,7 +354,7 @@ button {
 
 /* contact */
 .contact {
-  background-image: url('../img/contact_bg.svg');
+  background-image: url("../img/contact_bg.svg");
   background-position: 100% 80%;
   background-repeat: no-repeat;
 }
@@ -378,7 +378,7 @@ button {
 
 input,
 textarea {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #d0d9d4;
   border-radius: 4px;
   width: 100%;
@@ -386,12 +386,18 @@ textarea {
   font-size: 15px;
   line-height: 24px;
   color: #6b778c;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 textarea {
   border-color: #60c095;
+  resize: vertical;
 }
+
+/* textarea::-webkit-resizer {
+  background: url(resizer-handle.svg) no-repeat 99.9% 100%;
+  background-size: 25px;
+} */
 
 input:focus-visible,
 textarea:focus-visible {
@@ -400,7 +406,7 @@ textarea:focus-visible {
 
 input::placeholder,
 textarea::placeholder {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 textarea::placeholder {
@@ -447,7 +453,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url('../img/about_bg.svg');
+    background-image: url("../img/about_bg.svg");
     background-position: top;
   }
 }
@@ -500,6 +506,6 @@ textarea::placeholder {
   }
 
   .hero {
-    background-image: url('../img/header-llustration-desktop.svg');
+    background-image: url("../img/header-llustration-desktop.svg");
   }
 }
