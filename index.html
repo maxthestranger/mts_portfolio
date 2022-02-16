@@ -372,23 +372,43 @@
       </section>
 
       <section class="contact">
-        <div class="sec-wrapper">
+        <div class="sec-wrapper d-lg-flex">
           <div class="sec-text">
             <h2 class="sec-title">
               I'm always interested in hearing about new projects, so if you'd
               like to chat please get in touch.
             </h2>
+          </div>
+          <div class="form-wrapper">
             <form
               action="https://formspree.io/f/xjvlwyba"
               method="post"
               class="form"
             >
               <ul>
-                <li>
+                <li class="d-lg-none">
                   <input
                     type="text"
                     name="full_name"
                     placeholder="Full Name"
+                    maxlength="30"
+                    required
+                  />
+                </li>
+
+                <li class="d-lg-show">
+                  <input
+                    type="text"
+                    name="f_name"
+                    placeholder="First Name"
+                    maxlength="30"
+                    required
+                  />
+
+                  <input
+                    type="text"
+                    name="l_name"
+                    placeholder="Last Name"
                     maxlength="30"
                     required
                   />
@@ -415,7 +435,7 @@
                   ></textarea>
                 </li>
 
-                <li class="text-center">
+                <li class="text-center text-lg-left">
                   <button type="submit" class="btn">Get in touch</button>
                 </li>
               </ul>
@@ -476,6 +496,54 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <ul class="socials">
+        <li>
+          <a
+            href="https://github.com/maxthestranger"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./img/github.svg" alt="github" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/maxthestranger/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./img/linkedin.svg" alt="linkedIn" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://angel.co/u/max-the-stranger"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./img/angelist.svg" alt="angelist" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/Maxthestranger"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./img/twitter.svg" alt="twitter" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://medium.com/@maxthestranger"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./img/medium.svg" alt="medium" />
+          </a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

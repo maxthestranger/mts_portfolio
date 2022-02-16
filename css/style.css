@@ -411,6 +411,11 @@ textarea::placeholder {
   margin-top: 17px;
 }
 
+/* footer */
+.footer {
+  display: none;
+}
+
 /* 1020 */
 @media (max-width: 1020px) {
   .hero-description {
@@ -501,5 +506,63 @@ textarea::placeholder {
 
   .hero {
     background-image: url('../img/header-llustration-desktop.svg');
+  }
+
+  .contact {
+    background: url('../img/contact_desktop.svg') 100% 97% no-repeat,
+      url('../img/contact2.svg') 0% 109% no-repeat,
+      url('../img/contact3.svg') 27% 87% no-repeat;
+  }
+
+  .contact .socials,
+  .contact .mt-17 {
+    display: none;
+  }
+
+  .d-lg-flex {
+    flex-direction: row;
+    column-gap: 2%;
+  }
+
+  .d-lg-flex .sec-text {
+    margin: 0;
+    max-width: 40%;
+  }
+
+  .d-lg-flex .sec-title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 52px;
+    text-align: left;
+  }
+
+  .form-wrapper {
+    width: calc(100% - 42%);
+    max-width: calc(100% - 42%);
+  }
+
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .d-lg-none {
+    display: none;
+  }
+
+  .d-lg-show {
+    display: flex;
+    column-gap: 3%;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #dfe1e6;
+  }
+
+  .footer .socials {
+    padding: 16px 0;
+    margin: 0;
   }
 }
