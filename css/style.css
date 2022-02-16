@@ -52,6 +52,7 @@ button {
   position: fixed;
   width: 100%;
   top: 0;
+  backdrop-filter: blur(15px);
 }
 
 .navbar {
@@ -411,13 +412,24 @@ textarea::placeholder {
   margin-top: 17px;
 }
 
+.d-lg-show {
+  display: none;
+}
+
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* footer */
 .footer {
   display: none;
 }
 
 /* 1020 */
-@media (max-width: 1020px) {
+@media (max-width: 1200px) {
   .hero-description {
     padding: 0 29px;
   }
