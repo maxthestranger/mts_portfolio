@@ -238,10 +238,8 @@ button {
 
 /* about section */
 .about {
-  background-image: url('../img/about_bg.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top;
+  background: url('../img/about_m_r.svg') 100% 0% no-repeat,
+    url('../img/about_m_l.svg') -16% 26% no-repeat;
   width: 100%;
 }
 
@@ -462,11 +460,6 @@ textarea::placeholder {
   .hero-title {
     padding-top: 127px;
   }
-
-  .about {
-    background-image: url('../img/about_bg.svg');
-    background-position: top;
-  }
 }
 
 @media (max-width: 420px) {
@@ -518,6 +511,12 @@ textarea::placeholder {
 
   .hero {
     background-image: url('../img/header-llustration-desktop.svg');
+  }
+
+  .about {
+    background: url('../img/about_d_r.svg') 100% 0% no-repeat,
+      url('../img/about_d_l.svg') 0% 26% no-repeat;
+    width: 100%;
   }
 
   .contact {
