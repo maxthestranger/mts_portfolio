@@ -12,7 +12,7 @@
 
 <!-- ## Live Demo (if available) -->
 
-<!-- [Live Demo Link](https://livedemo.com) -->
+[Live Demo Link on Github Pages](https://maxthestranger.github.io/mts_portfolio/)
 
 ## Getting Started
 
