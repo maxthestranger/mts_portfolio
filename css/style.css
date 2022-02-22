@@ -206,7 +206,7 @@ button {
   flex-wrap: wrap;
 }
 
-.lower h2 {
+.lower h3 {
   color: #172b4d;
   font-weight: 600;
   font-size: 24px;
@@ -238,8 +238,7 @@ button {
 
 /* about section */
 .about {
-  background:
-    url('../img/about_m_r.svg') 100% 0% no-repeat,
+  background: url('../img/about_m_r.svg') 100% 0% no-repeat,
     url('../img/about_m_l.svg') -16% 26% no-repeat;
   width: 100%;
 }
@@ -533,15 +532,13 @@ textarea::placeholder {
   }
 
   .about {
-    background:
-      url('../img/about_d_r.svg') 100% 0% no-repeat,
+    background: url('../img/about_d_r.svg') 100% 0% no-repeat,
       url('../img/about_d_l.svg') 0% 26% no-repeat;
     width: 100%;
   }
 
   .contact {
-    background:
-      url('../img/contact_desktop.svg') 100% 97% no-repeat,
+    background: url('../img/contact_desktop.svg') 100% 97% no-repeat,
       url('../img/contact2.svg') 0% 109% no-repeat,
       url('../img/contact3.svg') 27% 87% no-repeat;
   }
