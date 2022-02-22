@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+  --primary: #1d6346;
+}
+
 *,
 *::after,
 *::before {
@@ -21,7 +25,7 @@ a {
 }
 
 a:hover {
-  color: #36b37e;
+  color: var(--primary);
   cursor: pointer;
 }
 
@@ -132,7 +136,7 @@ button {
 }
 
 .hero-title span {
-  color: #36b37e;
+  color: var(--primary);
 }
 
 .hero-description {
@@ -206,7 +210,7 @@ button {
   flex-wrap: wrap;
 }
 
-.lower h2 {
+.lower h3 {
   color: #172b4d;
   font-weight: 600;
   font-size: 24px;
@@ -279,7 +283,7 @@ button {
 
 .btn {
   padding: 12px;
-  background: #36b37f;
+  background: var(--primary);
   border-radius: 4px;
   font-weight: 500;
   font-size: 17px;
@@ -296,7 +300,7 @@ button {
   z-index: -1;
   position: absolute;
   width: 100%;
-  background: #36b37f;
+  background: var(--primary);
   left: 0;
   height: 100%;
   top: 0;
@@ -363,7 +367,7 @@ button {
   background: #fff;
   border-radius: 8px;
   padding: 12px;
-  color: #36b37e;
+  color: var(--primary);
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
