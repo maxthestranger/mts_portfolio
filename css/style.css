@@ -22,6 +22,11 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+body.no-scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 a {
   text-decoration: none;
   transition: all 0.2s ease-in;

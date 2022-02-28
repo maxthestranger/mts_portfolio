@@ -4,6 +4,7 @@ const menuList = document.querySelectorAll('.mb-menu-list a');
 
 btn.addEventListener('click', () => {
   menu.classList.toggle('active');
+  document.body.classList.toggle('no-scroll');
 });
 
 menuList.forEach((list) => {
