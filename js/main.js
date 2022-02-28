@@ -1,14 +1,13 @@
-document.querySelector('.cross').addEventListener('click', function() {
-    document.querySelector(".mobile-nav").style.display="none";
+const btn = document.querySelector('.mb-menu');
+const menu = document.querySelector('.hamburger');
+const menuList = document.querySelectorAll('.mb-menu-list a');
 
-})
-document.querySelector('.hamburger button').addEventListener('click', function() {
-    document.querySelector(".mobile-nav").style.display="flex";
+btn.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
 
-})
-document.querySelectorAll('.mobile-nav .nav-link').forEach(elem => {
-    elem.addEventListener('click', function() {
-        document.querySelector(".mobile-nav").style.display="none";
-    
-    })
-})
+menuList.forEach((list) => {
+  list.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
+});

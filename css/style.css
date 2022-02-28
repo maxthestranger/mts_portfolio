@@ -79,16 +79,17 @@ button {
 }
 
 .mb-menu {
-  display: flex;
+  display: block;
   flex-direction: column;
-  width: 48px;
-  height: 48px;
-  justify-content: space-around;
-  align-items: center;
+  width: 30px;
+  height: 45px;
   border-radius: 8px;
-  padding: 14px 11px;
   border: none;
   background: transparent;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .brand {
@@ -100,10 +101,31 @@ button {
 }
 
 .mb-menu span {
+  display: block;
+  position: absolute;
   height: 2px;
-  background: #28352f;
   width: 100%;
+  background: #28352f;
   border-radius: 8px;
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.mb-menu span:nth-child(1) {
+  top: 10px;
+  transform-origin: left center;
+}
+
+.mb-menu span:nth-child(2) {
+  top: 20px;
+  transform-origin: left center;
+}
+
+.mb-menu span:nth-child(3) {
+  top: 30px;
+  transform-origin: left center;
 }
 
 /* hero */
@@ -453,46 +475,62 @@ textarea::placeholder {
 }
 
 /* mobile menu */
-.mobile-nav {
-  display:flex;
+.mb-menu-list {
+  display: none;
   width: 100%;
   background: #fff;
   padding: 12px;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 48px;
   left: 0;
   min-height: 755px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  padding-top: 92px;
+  padding-top: 22px;
 }
 
-.mobile-nav a {
+.mb-menu-list a {
   padding: 16px;
   width: 100%;
   color: #3a4a42;
   font-weight: 600;
   font-size: 32px;
   line-height: 44px;
+  display: block;
 }
 
-.mobile-nav a:hover {
+.mb-menu-list a:hover {
   color: #27c080;
 }
 
-.cross {
-  position: absolute;
-  right: 0;
-  top: 0;
+.hamburger.active .mb-menu-list {
+  display: flex;
 }
 
-.cross span:first-child {
+.hamburger.active .mb-menu span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+  left: 8px;
+}
+
+.hamburger.active .mb-menu span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.hamburger.active .mb-menu span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 32px;
+  left: 8px;
+}
+
+.open span:first-child {
   transform: rotate(45deg);
   margin-top: 17px;
 }
 
-.cross span:nth-child(2) {
+.open span:nth-child(2) {
   transform: rotate(-45deg);
   margin-bottom: 2px;
 }
@@ -558,7 +596,7 @@ textarea::placeholder {
 }
 
 @media (min-width: 768px) {
-  .mb-menu {
+  .hamburger {
     display: none;
   }
 
