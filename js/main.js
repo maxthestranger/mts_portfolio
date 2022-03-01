@@ -1,3 +1,41 @@
+import workData from './data.js';
+
+const workOuterContainer = document.querySelector('.works');
+
+// create works
+function generateWorks({ name, tech, ImgUrl }, index) {
+  const workContainer = document.createElement('div');
+  workContainer.classList.add('works-item');
+
+  workContainer.innerHTML = `
+  <div class="work-img">
+    <div class="proj-image">
+      <img src="img/${ImgUrl}" alt="${name}" />
+    </div>
+  </div>
+  <div class="lower">
+    <h3>${name}</h3>
+    <ul class="tags">
+    ${tech.map(
+    (tec) => `<li>
+      <a href="#"> ${tec} </a>
+    </li>`,
+  )}
+    </ul>
+    <button class="btn show-modal" data-id="${index}" type="button">
+      See Project
+    </button>
+  </div>
+  `;
+
+  workOuterContainer.appendChild(workContainer);
+}
+
+// create works section
+workData.forEach((work, index) => {
+  generateWorks(work, index);
+});
+
 // hambuger menu imports
 const btn = document.querySelector('.mb-menu');
 const menu = document.querySelector('.hamburger');
@@ -18,64 +56,6 @@ menuList.forEach((list) => {
 // modal implementation
 const modalContainer = document.querySelector('.modal_container');
 const workBtns = document.querySelectorAll('.show-modal');
-
-// modal data
-const workData = [
-  {
-    name: 'Keeping track of hundreds of components 1',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLore",
-    ImgUrl: 'work.png',
-    tech: ['Ruby on rails', 'css', 'javascript'],
-    demoUrl: 'https://maxthestranger.github.io/mts_portfolio/',
-    gitUrl: 'https://github.com/maxthestranger/mts_portfolio',
-  },
-  {
-    name: 'Keeping track of hundreds of components 2',
-    description:
-      'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
-    ImgUrl: 'work.png',
-    tech: ['Ruby on rails', 'css', 'javascript'],
-    demoUrl: 'https://maxthestranger.github.io/mts_portfolio/',
-    gitUrl: 'https://github.com/maxthestranger/mts_portfolio',
-  },
-  {
-    name: 'Keeping track of hundreds of components 3',
-    description:
-      'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
-    ImgUrl: 'work.png',
-    tech: ['Ruby on rails', 'css', 'javascript'],
-    demoUrl: 'https://maxthestranger.github.io/mts_portfolio/',
-    gitUrl: 'https://github.com/maxthestranger/mts_portfolio',
-  },
-  {
-    name: 'Keeping track of hundreds of components 4',
-    description:
-      'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
-    ImgUrl: 'work.png',
-    tech: ['Ruby on rails', 'css', 'javascript'],
-    demoUrl: 'https://maxthestranger.github.io/mts_portfolio/',
-    gitUrl: 'https://github.com/maxthestranger/mts_portfolio',
-  },
-  {
-    name: 'Keeping track of hundreds of components 5',
-    description:
-      'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
-    ImgUrl: 'work.png',
-    tech: ['Ruby on rails', 'css', 'javascript'],
-    demoUrl: 'https://maxthestranger.github.io/mts_portfolio/',
-    gitUrl: 'https://github.com/maxthestranger/mts_portfolio',
-  },
-  {
-    name: 'Keeping track of hundreds of components 6',
-    description:
-      'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
-    ImgUrl: 'work.png',
-    tech: ['Ruby on rails', 'css', 'javascript'],
-    demoUrl: 'https://maxthestranger.github.io/mts_portfolio/',
-    gitUrl: 'https://github.com/maxthestranger/mts_portfolio',
-  },
-];
 
 // create modal
 function generateModal({

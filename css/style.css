@@ -265,10 +265,6 @@ button {
   background: #ebf0ee;
 }
 
-.proj-image {
-  padding: 123px 0;
-}
-
 .lower {
   border-radius: 8px;
   background-color: #fff;
@@ -589,7 +585,7 @@ textarea::placeholder {
   margin: 26px 16px;
   padding: 16px;
   background: #fff;
-  max-width: 920px;
+  max-width: 768px;
   position: relative;
 }
 
@@ -644,7 +640,7 @@ textarea::placeholder {
 .modal .modal_btn img {
   width: 24px;
   height: 24px;
-  margin-right: 10px;
+  margin-right: 17px;
 }
 
 /* 1100 */
