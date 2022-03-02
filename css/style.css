@@ -20,6 +20,7 @@ body {
   color: #172b4d;
   background: #fff;
   font-family: 'Inter', sans-serif;
+  position: relative;
 }
 
 body.no-scroll {
@@ -66,6 +67,7 @@ button {
   width: 100%;
   top: 0;
   backdrop-filter: blur(15px);
+  z-index: 10;
 }
 
 .navbar {
@@ -120,6 +122,14 @@ button {
   left: 0;
   transition: 0.25s ease-in-out;
   transform: rotate(0deg);
+}
+
+.modalcross span {
+  height: 2px;
+  width: 12px;
+  border-radius: 8px;
+  background: #67798e;
+  position: absolute;
 }
 
 .mb-menu span:nth-child(1) {
@@ -256,10 +266,6 @@ button {
   background: #ebf0ee;
 }
 
-.proj-image {
-  padding: 123px 0;
-}
-
 .lower {
   border-radius: 8px;
   background-color: #fff;
@@ -279,7 +285,8 @@ button {
   text-align: center;
 }
 
-.lower .tags {
+.lower .tags,
+.modal .tags {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -288,7 +295,8 @@ button {
   row-gap: 20px;
 }
 
-.lower .tags a {
+.lower .tags a,
+.modal .tags a {
   background: #ebf0ee;
   border-radius: 4px;
   padding: 8px 12px;
@@ -351,7 +359,8 @@ button {
   color: #fff;
   transition: all 0.5s ease-in-out;
   position: relative;
-  z-index: -1;
+
+  /* z-index: -1; */
 }
 
 .btn::after {
@@ -515,6 +524,26 @@ textarea::placeholder {
   display: flex;
 }
 
+.modalcross {
+  float: right;
+  margin-bottom: 16px;
+  background: #ebecf0;
+  display: flex;
+  position: relative;
+  padding: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.modalcross span:first-child {
+  transform: rotate(45deg);
+}
+
+.modalcross span:last-child {
+  transform: rotate(-45deg);
+}
+
 .hamburger.active .mb-menu span:nth-child(1) {
   transform: rotate(45deg);
   top: 10px;
@@ -532,6 +561,87 @@ textarea::placeholder {
   left: 8px;
 }
 
+/* modal */
+.modal_container {
+  position: fixed;
+  display: none;
+  border-radius: 8px;
+  z-index: 6;
+  background: #c1c7d0c7;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal_container.active {
+  display: flex;
+}
+
+.modal {
+  margin: auto;
+  padding: 16px;
+  background: #fff;
+  max-width: 768px;
+  position: relative;
+}
+
+.modal_img {
+  margin-bottom: 16px;
+  position: relative;
+  clear: both;
+}
+
+.modal_title {
+  color: #172b4d;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  margin-bottom: 16px;
+}
+
+.modal .tags {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.modal_desc {
+  color: #344563;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal_d {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal .modal_btn {
+  display: flex;
+  justify-content: space-between;
+  max-width: 318px;
+  max-height: 50px;
+  gap: 10px;
+}
+
+.modal .modal_btn a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px;
+}
+
+.modal .modal_btn img {
+  width: 24px;
+  height: 24px;
+  margin-right: 17px;
+}
+
 /* 1100 */
 @media (max-width: 1100px) {
   .hero-description {
@@ -547,6 +657,21 @@ textarea::placeholder {
 @media (max-width: 768px) {
   .sec-wrapper {
     margin: 0 25px;
+  }
+
+  .modal_btn.desktop {
+    display: none;
+  }
+
+  .modal_btn {
+    margin: 0 auto;
+  }
+
+  .modalcross {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
   }
 
   .sec-text {
@@ -594,6 +719,10 @@ textarea::placeholder {
 
 @media (min-width: 768px) {
   .hamburger {
+    display: none;
+  }
+
+  .modal_btn.mobile {
     display: none;
   }
 
