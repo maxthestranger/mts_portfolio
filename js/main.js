@@ -123,3 +123,29 @@ workBtns.forEach((workBtn) => {
     document.body.classList.add('no-scroll');
   });
 });
+
+// mail validation
+const form = document.querySelector('.form');
+const MAIL_ERROR = 'Please enter your email address in lower case';
+
+function displayErr(input, msg) {
+  const msgCon = input.parentNode.querySelector('small');
+
+  msgCon.innerText = msg;
+}
+
+function handleMailValidation(input, msg) {
+  const inputVal = input.value.trim().toLowerCase();
+  if (inputVal !== input.value.trim()) {
+    displayErr(input, msg);
+  } else {
+    displayErr(input, '');
+    form.submit();
+  }
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  handleMailValidation(form.elements.email_address, MAIL_ERROR);
+});
