@@ -503,7 +503,9 @@ textarea::placeholder {
 }
 
 .d-lg-show {
-  display: none;
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-wrapper {
@@ -511,6 +513,10 @@ textarea::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.error {
+  color: brown;
 }
 
 /* footer */
@@ -803,6 +809,7 @@ textarea::placeholder {
 
   .d-lg-show {
     display: flex;
+    flex-direction: row;
     column-gap: 3%;
   }
 
