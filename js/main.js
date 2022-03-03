@@ -138,10 +138,10 @@ function handleMailValidation(input, msg) {
   const inputVal = input.value.trim().toLowerCase();
   if (inputVal !== input.value.trim()) {
     displayErr(input, msg);
-    return false;
+  } else {
+    displayErr(input, '');
+    form.submit();
   }
-  displayErr(input, '');
-  return true;
 }
 
 // local Storage
@@ -163,12 +163,13 @@ function storeInfo(formElement) {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const submit = handleMailValidation(form.elements.email_address, MAIL_ERROR);
+  handleMailValidation(form.elements.email_address, MAIL_ERROR);
+});
 
-  if (submit) {
+Array.from(form.elements).forEach((elem) => {
+  elem.addEventListener('input', () => {
     storeInfo(form);
-    form.submit();
-  }
+  });
 });
 
 // load form with data from local storage
