@@ -17,10 +17,10 @@ function generateWorks({ name, tech, ImgUrl }, index) {
     <h3>${name}</h3>
     <ul class="tags">
     ${tech.map(
-    (tec) => `<li>
+      (tec) => `<li>
       <a href="#"> ${tec} </a>
-    </li>`,
-  )}
+    </li>`
+    )}
     </ul>
     <button class="btn show-modal" data-id="${index}" type="button">
       See Project
@@ -58,9 +58,7 @@ const modalContainer = document.querySelector('.modal_container');
 const workBtns = document.querySelectorAll('.show-modal');
 
 // create modal
-function generateModal({
-  ImgUrl, name, description, tech, demoUrl, gitUrl,
-}) {
+function generateModal({ ImgUrl, name, description, tech, demoUrl, gitUrl }) {
   const modal = document.createElement('div');
   modal.classList.add('modal');
 
@@ -86,10 +84,10 @@ function generateModal({
     </div>
     <ul class="tags">
       ${tech.map(
-    (tec) => `<li>
+        (tec) => `<li>
         <a href="#"> ${tec} </a>
-      </li>`,
-  )}
+      </li>`
+      )}
     </ul>
     <p class="modal_desc">
       ${description}
@@ -138,14 +136,57 @@ function handleMailValidation(input, msg) {
   const inputVal = input.value.trim().toLowerCase();
   if (inputVal !== input.value.trim()) {
     displayErr(input, msg);
+    return false;
   } else {
     displayErr(input, '');
-    form.submit();
+    return true;
   }
 }
 
+// local Storage
+
+function createUserData(formElement) {
+  return {
+    f_name: formElement.elements.f_name.value.trim(),
+    l_name: formElement.elements.l_name.value.trim(),
+    email_address: formElement.elements.email_address.value.trim(),
+    comment: formElement.elements.comment.value.trim(),
+  };
+}
+
+function storeInfo(formElement) {
+  localStorage.setItem('userInfo', JSON.stringify(createUserData(formElement)));
+}
+
+// submit form
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  handleMailValidation(form.elements.email_address, MAIL_ERROR);
+  let submit = handleMailValidation(form.elements.email_address, MAIL_ERROR);
+
+  if (submit) {
+    storeInfo(form);
+    form.submit();
+  }
 });
+
+// load form with data from local storage
+function mapDataForm(data) {
+  if (Object.entries(data).length > 0) {
+    let { f_name, l_name, email_address, comment } = data;
+
+    form.elements.f_name.value = f_name;
+    form.elements.l_name.value = l_name;
+    form.elements.email_address.value = email_address;
+    form.elements.comment.value = comment;
+  }
+}
+
+function loadFormData() {
+  let userData =
+    localStorage.length > 0 ? JSON.parse(localStorage.getItem('userInfo')) : {};
+
+  mapDataForm(userData);
+}
+
+loadFormData();
