@@ -174,7 +174,6 @@ form.addEventListener('submit', (e) => {
 function mapDataForm(data) {
   if (Object.entries(data).length > 0) {
     let { f_name, l_name, email_address, comment } = data;
-
     form.elements.f_name.value = f_name;
     form.elements.l_name.value = l_name;
     form.elements.email_address.value = email_address;
