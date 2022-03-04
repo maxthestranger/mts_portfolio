@@ -144,8 +144,52 @@ function handleMailValidation(input, msg) {
   }
 }
 
+// local Storage
+
+function createUserData(formElement) {
+  return {
+    fName: formElement.elements.f_name.value.trim(),
+    lName: formElement.elements.l_name.value.trim(),
+    emailAddress: formElement.elements.email_address.value.trim(),
+    comment: formElement.elements.comment.value.trim(),
+  };
+}
+
+function storeInfo(formElement) {
+  localStorage.setItem('userInfo', JSON.stringify(createUserData(formElement)));
+}
+
+// submit form
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   handleMailValidation(form.elements.email_address, MAIL_ERROR);
 });
+
+Array.from(form.elements).forEach((elem) => {
+  elem.addEventListener('input', () => {
+    storeInfo(form);
+  });
+});
+
+// load form with data from local storage
+function mapDataForm(data) {
+  if (Object.entries(data).length > 0) {
+    const {
+      fName, lName, emailAddress, comment,
+    } = data;
+
+    form.elements.f_name.value = fName;
+    form.elements.l_name.value = lName;
+    form.elements.email_address.value = emailAddress;
+    form.elements.comment.value = comment;
+  }
+}
+
+function loadFormData() {
+  const userData = localStorage.length > 0 ? JSON.parse(localStorage.getItem('userInfo')) : {};
+
+  mapDataForm(userData);
+}
+
+loadFormData();
