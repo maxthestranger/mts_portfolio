@@ -1,6 +1,6 @@
 import workData from './data.js';
 
-const workOuterContainer = document.querySelector('.works');
+const workOuterContainer = document.querySelector('.wrks');
 
 // create works
 function generateWorks({ name, tech, ImgUrl }, index) {
